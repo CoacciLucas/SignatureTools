@@ -1,8 +1,5 @@
 package com.example.plugin;
 
-import com.example.plugin.listeners.AbilityListener;
-import com.example.plugin.listeners.BlockBreakListener;
-import com.example.plugin.state.SignatureStateManager;
 import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 import com.hypixel.hytale.server.core.event.events.ecs.BreakBlockEvent;
@@ -20,13 +17,8 @@ import org.checkerframework.checker.nullness.compatqual.NonNullDecl;
  */
 public class SignatureToolsPlugin extends JavaPlugin {
 
-    private final BlockBreakListener blockBreakListener;
-    private final AbilityListener abilityListener;
-
     public SignatureToolsPlugin(@NonNullDecl JavaPluginInit init) {
         super(init);
-        this.blockBreakListener = new BlockBreakListener();
-        this.abilityListener = new AbilityListener();
     }
 
     @SuppressWarnings("deprecation") // PlayerInteractEvent is deprecated but still required for keyboard ability
@@ -36,14 +28,14 @@ public class SignatureToolsPlugin extends JavaPlugin {
         super.setup();
 
         // Registrar listener para eventos de quebra de bloco
-        this.getEventRegistry().register(BreakBlockEvent.class, event -> {
-            blockBreakListener.onBlockBreak(event);
-        });
+        // this.getEventRegistry().register(BreakBlockEvent.class, event -> {
+        // blockBreakListener.onBlockBreak(event);
+        // });
 
         // Registrar listener para eventos de interação (tecla Q)
-        this.getEventRegistry().registerGlobal(PlayerInteractEvent.class, event -> {
-            abilityListener.onPlayerInteract(event);
-        });
+        // this.getEventRegistry().registerGlobal(PlayerInteractEvent.class, event -> {
+        // abilityListener.onPlayerInteract(event);
+        // });
 
         // Log de inicialização
         System.out.println("[SignatureTools] Plugin loaded! Explosive Mining skill enabled.");
@@ -54,7 +46,7 @@ public class SignatureToolsPlugin extends JavaPlugin {
         super.shutdown();
 
         // Limpar estados dos jogadores
-        SignatureStateManager.getInstance().clearAll();
+        // SignatureStateManager.getInstance().clearAll();
 
         System.out.println("[SignatureTools] Plugin unloaded!");
     }

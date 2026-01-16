@@ -1,0 +1,6 @@
+{
+    "RequireNewClick": true,
+    "Interactions": [
+        "signaturetools:interact_explosive_skill"
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "Type": "Explode",
+    "Config": {
+        "DamageEntities": true,
+        "DamageBlocks": true,
+        "BlockDamageRadius": 2,
+        "BlockDropChance": 1.0,
+        "EntityDamage": 10.0,
+        "EntityDamageRadius": 3,
+        "ParticleEffects": [
+            {
+                "SystemId": "Explosion_Medium",
+                "TargetEntityPart": "Entity"
+            }
+        ],
+        "Knockback": {
+            "Type": "Point",
+            "VelocityConfig": {
+                "Direction": {
+                    "Y": 5.0
+                },
+                "Threshold": 1.0
+            },
+            "Force": 5,
+            "VelocityType": "Set"
+        }
+    }
+}

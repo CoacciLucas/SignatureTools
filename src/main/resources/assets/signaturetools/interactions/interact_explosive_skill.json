@@ -1,0 +1,31 @@
+{
+    "Type": "StatsCondition",
+    "Costs": {
+        "SignatureEnergy": 100
+    },
+    "ValueType": "Percent",
+    "Next": {
+        "Type": "Serial",
+        "Interactions": [
+            {
+                "Type": "Simple",
+                "RunTime": 0.15,
+                "Effects": {
+                    "WorldSoundEventId": "SFX_Goblin_Lobber_Bomb_Throw_Charged",
+                    "LocalSoundEventId": "SFX_Goblin_Lobber_Bomb_Throw_Charged"
+                }
+            },
+            {
+                "Type": "ChangeStat",
+                "StatModifiers": {
+                    "SignatureEnergy": -100
+                },
+                "ValueType": "Percent"
+            },
+            {
+                "Type": "Import",
+                "InteractionId": "signaturetools:interact_explosive_blast"
+            }
+        ]
+    }
+}
