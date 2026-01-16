@@ -18,16 +18,16 @@ public class HelloCommand extends AbstractPlayerCommand {
 
     @Override
     protected void execute(@NonNullDecl CommandContext commandContext,
-                           @NonNullDecl Store<EntityStore> store,
-                           @NonNullDecl Ref<EntityStore> ref,
-                           @NonNullDecl PlayerRef playerRef,
-                           @NonNullDecl World world
-    ) {
+            @NonNullDecl Store<EntityStore> store,
+            @NonNullDecl Ref<EntityStore> ref,
+            @NonNullDecl PlayerRef playerRef,
+            @NonNullDecl World world) {
+        var playerClass = playerRef.getClass();
         EventTitleUtil.showEventTitleToPlayer(
                 playerRef,
                 Message.raw("Hello world!"),
-                Message.raw("Mauco gay"),
-                true
-        );
+                Message.raw(playerClass.getName()),
+                true);
+
     }
 }

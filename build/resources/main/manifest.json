@@ -1,6 +1,7 @@
 {
   "Group": "com.example",
-  "Name": "HelloPlugin",
+  "Name": "SignatureTools",
   "Version": "1.0.0",
-  "Main": "com.example.plugin.HelloPlugin"
+  "Description": "Adds Explosive Mining signature skill to pickaxes",
+  "Main": "com.example.plugin.SignatureToolsPlugin"
 }
